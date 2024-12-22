@@ -1,0 +1,168 @@
+[
+    {
+      "_id": "T01",
+      "count": 1,
+      "blogName": "Dev Insights",
+      "title": "Mastering React State Management",
+      "imageUrl": "https://i.ibb.co.com/mbkY7rS/download1.jpg",
+      "category": "Technology",
+      "shortDescription": "Effective state management techniques in React.",
+      "longDescription": "React state management can be challenging, but with tools like Redux, Context API, and Zustand, you can create scalable and maintainable applications.",
+      "details": "Explore advanced state management strategies in React."
+    },
+    {
+      "_id": "T02",
+      "count": 2,
+      "blogName": "Code Chronicles",
+      "title": "Top 10 VS Code Extensions for Developers",
+      "imageUrl": "https://i.ibb.co.com/x8zGKL0/2.jpg",
+      "category": "Development",
+      "shortDescription": "Enhance your productivity with these extensions.",
+      "longDescription": "Visual Studio Code is the go-to editor for developers. Discover the top 10 extensions that can boost your efficiency and streamline your coding experience.",
+      "details": "Find out which VS Code extensions to use."
+    },
+    {
+      "_id": "T03",
+      "count": 3,
+      "blogName": "Frontend Guru",
+      "title": "Responsive Web Design Principles",
+      "imageUrl": "https://i.ibb.co.com/N1dy8Fd/3.jpg",
+      "category": "Web Design",
+      "shortDescription": "Create stunning responsive websites.",
+      "longDescription": "Responsive design is key to modern web development. Learn the principles and techniques for building layouts that look great on all devices.",
+      "details": "Learn the basics of responsive web design."
+    },
+    {
+      "_id": "T04",
+      "count": 4,
+      "blogName": "Tech Innovators",
+      "title": "AI-Powered Web Development Tools",
+      "imageUrl": "https://via.placeholder.com/300x200",
+      "category": "Technology",
+      "shortDescription": "How AI is transforming web development.",
+      "longDescription": "Artificial intelligence is revolutionizing web development with tools that generate code, optimize websites, and predict user behavior.",
+      "details": "Discover AI tools for web developers."
+    },
+    {
+      "_id": "T05",
+      "count": 5,
+      "blogName": "DevOps Daily",
+      "title": "Continuous Integration Best Practices",
+      "imageUrl": "https://via.placeholder.com/300x200",
+      "category": "Development",
+      "shortDescription": "Streamline your CI/CD pipeline.",
+      "longDescription": "Continuous Integration (CI) is a critical part of modern software development. Learn best practices for setting up and optimizing your CI pipelines.",
+      "details": "Understand CI/CD workflows and tips."
+    },
+    {
+      "_id": "T06",
+      "count": 6,
+      "blogName": "UI/UX Weekly",
+      "title": "Improving Web Accessibility",
+      "imageUrl": "https://via.placeholder.com/300x200",
+      "category": "Web Design",
+      "shortDescription": "Design websites for everyone.",
+      "longDescription": "Web accessibility ensures that your site is usable by people with disabilities. Discover guidelines and techniques to create inclusive web experiences.",
+      "details": "Learn about web accessibility standards."
+    },
+    {
+      "_id": "T07",
+      "count": 7,
+      "blogName": "Full Stack Focus",
+      "title": "Node.js vs. Deno: Which to Choose?",
+      "imageUrl": "https://via.placeholder.com/300x200",
+      "category": "Technology",
+      "shortDescription": "Comparing the top JavaScript runtimes.",
+      "longDescription": "Node.js has been a staple for backend JavaScript development, but Deno is emerging as a strong competitor. Find out which is best for your project.",
+      "details": "Compare Node.js and Deno features."
+    },
+    {
+      "_id": "T08",
+      "count": 8,
+      "blogName": "Frontend Wizard",
+      "title": "CSS Grid vs. Flexbox: When to Use Each",
+      "imageUrl": "https://via.placeholder.com/300x200",
+      "category": "Web Design",
+      "shortDescription": "Understand modern CSS layout techniques.",
+      "longDescription": "CSS Grid and Flexbox are powerful tools for creating layouts. Learn the differences and use cases for each to make your designs more efficient.",
+      "details": "Master CSS Grid and Flexbox."
+    },
+    {
+      "_id": "T09",
+      "count": 9,
+      "blogName": "Backend Builders",
+      "title": "Building Scalable REST APIs",
+      "imageUrl": "https://via.placeholder.com/300x200",
+      "category": "Development",
+      "shortDescription": "Tips for creating efficient APIs.",
+      "longDescription": "REST APIs are a cornerstone of modern applications. Learn how to design and implement APIs that can scale with your application's needs.",
+      "details": "Explore REST API development tips."
+    },
+    {
+      "_id": "T10",
+      "count": 10,
+      "blogName": "Modern Coding",
+      "title": "Version Control with Git and GitHub",
+      "imageUrl": "https://via.placeholder.com/300x200",
+      "category": "Development",
+      "shortDescription": "Master the art of version control.",
+      "longDescription": "Git and GitHub are essential tools for developers. This blog covers basic to advanced version control workflows and collaboration strategies.",
+      "details": "Get started with Git and GitHub."
+    },
+    {
+      "_id": "T11",
+      "count": 11,
+      "blogName": "Frontend Mastery",
+      "title": "Building Progressive Web Apps",
+      "imageUrl": "https://via.placeholder.com/300x200",
+      "category": "Web Design",
+      "shortDescription": "Why PWAs are the future of the web.",
+      "longDescription": "Progressive Web Apps (PWAs) combine the best of web and mobile apps. Learn how to build fast, reliable, and engaging PWAs.",
+      "details": "Dive into the world of PWAs."
+    },
+    {
+      "_id": "T12",
+      "count": 12,
+      "blogName": "Next.js Zone",
+      "title": "Getting Started with Next.js",
+      "imageUrl": "https://via.placeholder.com/300x200",
+      "category": "Technology",
+      "shortDescription": "A beginner's guide to Next.js.",
+      "longDescription": "Next.js is a powerful framework for building server-side rendered React applications. Learn the basics and how to get started.",
+      "details": "Explore the power of Next.js."
+    },
+    {
+      "_id": "T13",
+      "count": 13,
+      "blogName": "Dev Tips",
+      "title": "Understanding TypeScript Basics",
+      "imageUrl": "https://via.placeholder.com/300x200",
+      "category": "Development",
+      "shortDescription": "Write safer and more robust JavaScript.",
+      "longDescription": "TypeScript adds static typing to JavaScript, making it easier to catch errors early. This blog explains its key features and usage.",
+      "details": "Start learning TypeScript today."
+    },
+    {
+      "_id": "T14",
+      "count": 14,
+      "blogName": "Design Central",
+      "title": "Dark Mode Design Best Practices",
+      "imageUrl": "https://via.placeholder.com/300x200",
+      "category": "Web Design",
+      "shortDescription": "Make your website shine in dark mode.",
+      "longDescription": "Dark mode is a popular trend in web design. Learn the best practices for designing interfaces that look great in both light and dark modes.",
+      "details": "Implement dark mode the right way."
+    },
+    {
+      "_id": "T15",
+      "count": 15,
+      "blogName": "JavaScript Junction",
+      "title": "Event Handling in JavaScript",
+      "imageUrl": "https://via.placeholder.com/300x200",
+      "category": "Technology",
+      "shortDescription": "Master JavaScript event handling.",
+      "longDescription": "Event handling is a key part of interactive web development. This blog covers the basics of event listeners, bubbling, and delegation.",
+      "details": "Improve your JavaScript skills."
+    }
+  ]
+  
