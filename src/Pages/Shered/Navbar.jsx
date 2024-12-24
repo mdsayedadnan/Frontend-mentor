@@ -27,8 +27,8 @@ const Navbar = () => {
     const links = <>
 
     <li data-tooltip-id="my-tooltip" data-tooltip-content="Home"><NavLink to='/'>Home</NavLink></li>
-    <li data-tooltip-id="my-tooltip" data-tooltip-content="All Reviews"><NavLink to='/allreviews'>All blogs</NavLink></li>
-    <li data-tooltip-id="my-tooltip" data-tooltip-content="Add Reviews"><NavLink to='/addreview'>Add Blog</NavLink></li>
+    <li data-tooltip-id="my-tooltip" data-tooltip-content="All Reviews"><NavLink to='/AllBlogs'>All blogs</NavLink></li>
+    <li data-tooltip-id="my-tooltip" data-tooltip-content="Add Reviews"><NavLink to='/Add'>Add Blog</NavLink></li>
     <li data-tooltip-id="my-tooltip" data-tooltip-content="My Reviews"><NavLink to='/myreview'> Featured Blogs</NavLink></li>
     <li data-tooltip-id="my-tooltip" data-tooltip-content="My Game watchlist"><NavLink to='/gamewishlist'>Wishlist Blog</NavLink></li>
     {

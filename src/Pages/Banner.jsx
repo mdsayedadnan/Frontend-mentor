@@ -1,27 +1,56 @@
+import { Slide } from '@mui/material';
 import React from 'react';
+import Swiper from 'swiper';
+import { SwiperSlide } from 'swiper/react';
 
-const Banner = () => {
+import 'swiper/css'
+import 'swiper/css/pagination'
+import 'swiper/css/navigation'
+import img1 from '../../src/assets/1.png'
+// import required modules
+import { Autoplay, Pagination, Navigation } from 'swiper/modules'
+
+export default function Carousel() {
+
     return (
-        <div>
-            <div
-                className="hero h-[500px] border"
-                style={{
-                    backgroundImage: "url(https://img.daisyui.com/images/stock/photo-1507358522600-9f71e620c44e.webp)",
-                }}>
-                <div className="hero-overlay bg-opacity-60"></div>
-                <div className="hero-content text-neutral-content text-center">
-                    <div className="max-w-md">
-                        <h1 className="mb-5 text-5xl font-bold">Hello there</h1>
-                        <p className="mb-5">
-                            Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem
-                            quasi. In deleniti eaque aut repudiandae et a id nisi.
-                        </p>
-                        <button className="btn btn-primary">Get Started</button>
-                    </div>
-                </div>
-            </div>
-        </div>
+  
+           <div className='container px-6 py-10 mx-auto'>
+      <Swiper
+        spaceBetween={30}
+        centeredSlides={true}
+        loop={true}
+        autoplay={{
+          delay: 5000,
+          disableOnInteraction: false,
+        }}
+        pagination={{
+          clickable: true,
+        }}
+        navigation={true}
+        modules={[Autoplay, Pagination, Navigation]}
+        className='mySwiper'
+      >
+        {/* <SwiperSlide>
+          <Slide
+            image={img1}
+            text='Get Your Web Development Projects Done in minutes'
+          />
+        </SwiperSlide> */}
+        <SwiperSlide>
+          <Slide
+            image={img1}
+            text='Get Your Graphics Design Projects Done in minutes'
+          />
+        </SwiperSlide>
+        <SwiperSlide>
+          <Slide
+            image={img1}
+            text='Start Your Digital Marketing Campaigns up n running'
+          />
+        </SwiperSlide>
+      </Swiper>
+    </div>
+    
     );
-};
+}
 
-export default Banner;
