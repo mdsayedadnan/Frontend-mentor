@@ -1,9 +1,16 @@
-import React from 'react';
+import { useContext } from "react";
+import { AuthContext } from "../../Provider/AuthProvider";
 
 const Wishlist = () => {
+    const { user, logOut } = useContext(AuthContext);
+  
+
+
+
+
     return (
         <div>
-            <h1>Wishlist</h1>
+   
         </div>
     );
 };

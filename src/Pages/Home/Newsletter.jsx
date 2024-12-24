@@ -1,36 +1,41 @@
-import { Card, Text, VStack, TagGroup, Tag } from 'rsuite';
-
-const Newsletter = () => {
+import {
+    Card,
+    CardHeader,
+    CardBody,
+    CardFooter,
+    Typography,
+    Tooltip,
+} from "@material-tailwind/react";
+import { Button } from "rsuite";
+export function Newsletter() {
     return (
         <div>
             <div className="flex items-center justify-center">
                 <h1 className="text-2xl">Newsletter section</h1>
 
             </div>
-            <div className='w-full'> 
-            <Card shaded direction="row">
-      <img
-        src="https://images.unsplash.com/photo-1576606539605-b2a44fa58467?q=80&w=1974"
-        alt="Shadow"
-        width={200}
-        style={{ objectFit: 'cover' }}
-      />
-      <VStack spacing={2}>
-        <Card.Header as="h5">Cream</Card.Header>
-        <Card.Body>
-          Meet Shadow, a spirited little explorer with a heart full of adventure! This charming pup
-          loves to roam the fields, soaking up the sights and sounds of nature.
-        </Card.Body>
-        <Card.Footer>
-          <TagGroup>
-            <Tag size="sm">🐶 Dog</Tag>
-            <Tag size="sm">☀️ Sunny</Tag>
-            <Tag size="sm">🌈 Rainbow</Tag>
-          </TagGroup>
-        </Card.Footer>
-      </VStack>
+            <div className='w-full'>
+            <Card className="mt-6 w-96">
+      <CardHeader color="blue-gray" className="relative h-56">
+        <img
+          src="https://images.unsplash.com/photo-1540553016722-983e48a2cd10?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=80"
+          alt="card-image"
+        />
+      </CardHeader>
+      <CardBody>
+        <Typography variant="h5" color="blue-gray" className="mb-2">
+          UI/UX Review Check
+        </Typography>
+        <Typography>
+          The place is close to Barceloneta Beach and bus stop just 2 min by
+          walk and near to &quot;Naviglio&quot; where you can enjoy the main
+          night life in Barcelona.
+        </Typography>
+      </CardBody>
+      <CardFooter className="pt-0">
+        <Button>Read More</Button>
+      </CardFooter>
     </Card>
-
             </div>
         </div>
     );

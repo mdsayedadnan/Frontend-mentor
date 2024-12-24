@@ -1,56 +1,28 @@
-import { Slide } from '@mui/material';
-import React from 'react';
-import Swiper from 'swiper';
-import { SwiperSlide } from 'swiper/react';
+import { Carousel } from "@material-tailwind/react";
 
-import 'swiper/css'
-import 'swiper/css/pagination'
-import 'swiper/css/navigation'
-import img1 from '../../src/assets/1.png'
-// import required modules
-import { Autoplay, Pagination, Navigation } from 'swiper/modules'
 
-export default function Carousel() {
+export default function Banner() {
 
     return (
-  
-           <div className='container px-6 py-10 mx-auto'>
-      <Swiper
-        spaceBetween={30}
-        centeredSlides={true}
-        loop={true}
-        autoplay={{
-          delay: 5000,
-          disableOnInteraction: false,
-        }}
-        pagination={{
-          clickable: true,
-        }}
-        navigation={true}
-        modules={[Autoplay, Pagination, Navigation]}
-        className='mySwiper'
-      >
-        {/* <SwiperSlide>
-          <Slide
-            image={img1}
-            text='Get Your Web Development Projects Done in minutes'
-          />
-        </SwiperSlide> */}
-        <SwiperSlide>
-          <Slide
-            image={img1}
-            text='Get Your Graphics Design Projects Done in minutes'
-          />
-        </SwiperSlide>
-        <SwiperSlide>
-          <Slide
-            image={img1}
-            text='Start Your Digital Marketing Campaigns up n running'
-          />
-        </SwiperSlide>
-      </Swiper>
-    </div>
-    
+        <div>
+          <Carousel transition={{ duration: 2 }} className="rounded-xl">
+      <img
+        src="https://images.unsplash.com/photo-1497436072909-60f360e1d4b1?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2560&q=80"
+        alt="image 1"
+        className="h-full w-full object-cover"
+      />
+      <img
+        src="https://images.unsplash.com/photo-1493246507139-91e8fad9978e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2940&q=80"
+        alt="image 2"
+        className="h-full w-full object-cover"
+      />
+      <img
+        src="https://images.unsplash.com/photo-1518623489648-a173ef7824f3?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2762&q=80"
+        alt="image 3"
+        className="h-full w-full object-cover"
+      />
+    </Carousel>
+        </div>
     );
 }
 
