@@ -1,47 +1,55 @@
-import { useEffect, useState } from "react";
-import Marquee from "react-fast-marquee";
+import { useContext, useState } from "react";
+import Swal from "sweetalert2";
 
-export function Newsletter() {
-  const [items, setItem] = useState([])
-  useEffect(() => {
-    fetch('item.json')
-      .then(result => result.json())
-      .then(data => setItem(data))
 
-  }, [])
-  // console.log(items);
-  return (
-    <div>
-      <div className="flex items-center justify-center mt-5 p-4">
-        <Marquee>
-          <h1 className="text-5xl font-bold hover:text-purple-500">Newsletter section</h1>
-        </Marquee>
+const NewsLetter = () => {
+    const [email, setEmail] = useState("");
 
-      </div>
-      {
-        items.map(item =>
-
-          <div key={item._id} className="card lg:card-side bg-base-100 shadow-xl mt-5 mb-4">
-            <figure>
-              <img
-                src={item.imageUrl}
-                alt="Album" />
-            </figure>
-            <div className="card-body">
-              <h1 className="text-4xl font-semibold">{item.blogName}</h1>
-
-              <h2 className="card-title">{item.title}</h2>
-              <h1>{item.category}</h1>
-              <p>{item.longDescription}</p>
-              <div className="card-actions justify-end">
-              </div>
-            </div>
-          </div>
-
-        )
+    const handleSubmit = (e) => {
+      e.preventDefault();
+  
+      if (email) {
+        Swal.fire({
+          icon: "success",
+          title: "Subscribed",
+          text: "Thank you for subscribing to our newsletter!",
+          timer: 3000,
+          timerProgressBar: true,
+          showConfirmButton: false,
+          toast: true,
+          position: "top-end",
+        });
+  
+        setEmail(""); 
       }
+    };
+  
+
+ return (
+    <div className="min-h-screen flex flex-col items-center justify-center bg-gray-50">
+    <div className="bg-white p-6 rounded-md shadow-md w-full max-w-md">
+      <h2 className="text-2xl font-bold text-gray-800 mb-4">
+        Subscribe to our Newsletter
+      </h2>
+      <form onSubmit={handleSubmit} className="flex flex-col gap-4">
+        <input
+          type="email"
+          placeholder="Enter your email"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+          required
+          className="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+        />
+        <button
+          type="submit"
+          className="w-full px-4 py-2 bg-blue-500 text-white font-medium rounded-md hover:bg-blue-600"
+        >
+          Subscribe
+        </button>
+      </form>
     </div>
-  );
+  </div>
+    );
 };
 
-export default Newsletter;
+export default NewsLetter;

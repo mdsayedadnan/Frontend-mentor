@@ -7,12 +7,12 @@ import Login from "./Secure/Login";
 import SignIn from "./Secure/SignIn";
 import Home from "./Pages/Home/Home";
 import Newsletter from "./Pages/Home/newsletter";
-import Recentblog from "./Pages/Home/Recentblog";
 import AllBlogs from "./Pages/AllBlogs";
 import Details from "./Pages/Details";
 import Add from "./Pages/Home/Add";
 import Wishlist from "./Pages/Home/Wishlist";
 import Update from "./Pages/Home/Update";
+import Recentblog from "./Pages/Home/Recentblog";
 
 const router = createBrowserRouter([
     {
@@ -31,7 +31,7 @@ const router = createBrowserRouter([
             },
             {
                 path: '/recent',
-                element: <Recentblog></Recentblog>,
+                 element: <Recentblog></Recentblog>
             },
             {
                 path: '/AllBlogs',

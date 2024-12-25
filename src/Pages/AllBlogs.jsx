@@ -29,7 +29,7 @@ const AllBlogs = () => {
         const longDescription = e.longDescription
         const description = e.shortDescription
         const imageUrl = e.imageUrl
-        console.log(e);
+        console.log(email);
         const Data = {
             name,
             title,
@@ -51,7 +51,7 @@ const AllBlogs = () => {
             .then(data => {
                 if (data.insertedId) {
                     console.log('successfully added');
-                    navigator
+                    Navigate
                     Swal.fire({
                         title: 'Success!',
                         text: 'added successfully',
@@ -111,11 +111,11 @@ const AllBlogs = () => {
 
 
 
-            <div className=" mt-4 grid grid-cols-2">
+            <div className=" mt-4 grid  grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
                 {
                     items?.map(item => <div key={item._id}
 
-                        className="hero border bg-base-100 min-h-screen mt-5">
+                        className="hero border bg-base-100 min-h-screen mt-5 ">
                         <div className="card bg-base-100 w-96 shadow-xl">
                             <figure>
                                 <img className="rounded-2xl mt-6"
