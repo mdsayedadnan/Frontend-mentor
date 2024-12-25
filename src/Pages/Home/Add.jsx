@@ -16,7 +16,7 @@ const Add = () => {
         const category = form.category.value
         const longDescription = form.long_description.value
         const description = form.des.value
-        // const  imageUrl = form. image_url.value;
+        //  const  imageUrl = form. image_url.value;
 
         console.log(name, title, email, category, description, longDescription);
         const formData = {
@@ -26,9 +26,9 @@ const Add = () => {
             category,
             description,
             longDescription,
-            imageUrl
+            // imageUrl
         }
-        fetch('https://gamer-pro-server.vercel.app/Add', {
+        fetch('https://frontend-mento-server.vercel.app/Blogs', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

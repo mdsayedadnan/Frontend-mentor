@@ -2,6 +2,8 @@ import React, { useState, useContext, useEffect } from "react";
 import { AuthContext } from "../Provider/AuthProvider";
 import { useParams } from "react-router-dom";
 import axios from "axios";
+import { Button } from "@material-tailwind/react";
+
 
 const Details = () => {
     const { user } = useContext(AuthContext);
@@ -15,51 +17,48 @@ const Details = () => {
     }, [])
     const fetchBlogData = async () => {
         const { data } = await axios.get(
-            `http://localhost:5000/details/${id}`
+            `https://frontend-mento-server.vercel.app/details/${id}`
         )
         setBlogs(data)
-        // setStartDate(new Date(data.deadline))
     }
- 
-   
+
+
 
     return (
         <div>
+            <div className="flex items-center justify-center mb-6">
+                <h1 className="text-4xl font-bold text-gray-800 mt-5 p-4">Details The Blog</h1>
+            </div>
+            <div className=" mx-auto p-6">
 
-            {/* card section */}
-            <div>
-                <div>
-                    <div className="flex items-center justify-center mt-7">
-                        <h1 className="text-4xl">Details of the Blog</h1>
+
+                <div className="bg-white shadow-lg p-4 rounded-lg overflow-hidden">
+
+                    <div className="flex justify-center items-center">
+                        <img
+                            className="w-[500px] h-72 object-cover rounded-xl"
+                            src={blogs.imageUrl}
+                            alt={blogs.title}
+                        />
                     </div>
-                    <div className=" flex-col lg:flex-row bg-base-100 shadow-xl">
-                        <div className="flex justify-center items-center">
-                            <figure>
-                                <img
-                                    className="w-96"
-                                    src={blogs.imageUrl || "https://via.placeholder.com/300x200"}
-                                    alt={blogs.title || "Blog Image"}
-                                />
-                            </figure>
-                        </div>
-                        <div className="">
-                            <h2 className="">
-                                <div>
-                                    <h1 className="text-3xl font-bold">Blog Name: {blogs.blogName}</h1>
-                                    <h1 className="text-2xl font-bold">Title: {blogs.title}</h1>
-                                    <p className="py-1">Category: {blogs.category}</p>
-                                    <p className="py-3">Description: {blogs.shortDescription}</p>
-                                </div>
-                            </h2>
-                            <p>{blogs.longDescription}</p>
-                            <div className="justify-end">
-                                <div className="badge badge-outline">Fashion</div>
-                                <div className="badge badge-outline">Products</div>
-                            </div>
-                        </div>
+
+                    <div className="p-6">
+                        <h2 className="text-3xl font-bold text-gray-800 mb-2">{blogs.blogName}</h2>
+                        <h3 className="text-2xl font-semibold text-gray-700 mb-2"> {blogs.title}</h3>
+                        <p className="text-gray-600 mb-2">
+                            <span className="font-semibold"></span> {blogs.category}
+                        </p>
+                        <p className="text-gray-600 mb-4">{blogs.shortDescription}</p>
+                        <p className="text-gray-600">{blogs.longDescription}</p>
+
+
+                    </div >
+                    <div className="flex items-center mt-6 justify-center ">
+                    <Button className=" btn bg-gradient-to-r from-green-400 to-blue-500 hover:from-blue-500 hover:to-green-400 text-white py-2 px-6 rounded-lg mr-7" variant="outlined ">Update</Button>
                     </div>
                 </div>
             </div>
+
         </div>
 
     );

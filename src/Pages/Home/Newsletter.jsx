@@ -1,44 +1,47 @@
-import {
-    Card,
-    CardHeader,
-    CardBody,
-    CardFooter,
-    Typography,
-    Tooltip,
-} from "@material-tailwind/react";
-import { Button } from "rsuite";
-export function Newsletter() {
-    return (
-        <div>
-            <div className="flex items-center justify-center">
-                <h1 className="text-2xl">Newsletter section</h1>
+import { useEffect, useState } from "react";
+import Marquee from "react-fast-marquee";
 
+export function Newsletter() {
+  const [items, setItem] = useState([])
+  useEffect(() => {
+    fetch('item.json')
+      .then(result => result.json())
+      .then(data => setItem(data))
+
+  }, [])
+  console.log(items);
+  return (
+    <div>
+      <div className="flex items-center justify-center mt-5 p-4">
+        <Marquee>
+          <h1 className="text-5xl font-bold hover:text-purple-500">Newsletter section</h1>
+        </Marquee>
+
+      </div>
+      {
+        items.map(item =>
+
+          <div key={item._id} className="card lg:card-side bg-base-100 shadow-xl mt-5 mb-4">
+            <figure>
+              <img
+                src={item.imageUrl}
+                alt="Album" />
+            </figure>
+            <div className="card-body">
+              <h1 className="text-4xl font-semibold">{item.blogName}</h1>
+
+              <h2 className="card-title">{item.title}</h2>
+              <h1>{item.category}</h1>
+              <p>{item.longDescription}</p>
+              <div className="card-actions justify-end">
+              </div>
             </div>
-            <div className='w-full'>
-            <Card className="mt-6 w-96">
-      <CardHeader color="blue-gray" className="relative h-56">
-        <img
-          src="https://images.unsplash.com/photo-1540553016722-983e48a2cd10?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=80"
-          alt="card-image"
-        />
-      </CardHeader>
-      <CardBody>
-        <Typography variant="h5" color="blue-gray" className="mb-2">
-          UI/UX Review Check
-        </Typography>
-        <Typography>
-          The place is close to Barceloneta Beach and bus stop just 2 min by
-          walk and near to &quot;Naviglio&quot; where you can enjoy the main
-          night life in Barcelona.
-        </Typography>
-      </CardBody>
-      <CardFooter className="pt-0">
-        <Button>Read More</Button>
-      </CardFooter>
-    </Card>
-            </div>
-        </div>
-    );
+          </div>
+
+        )
+      }
+    </div>
+  );
 };
 
 export default Newsletter;
