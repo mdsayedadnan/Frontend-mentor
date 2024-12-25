@@ -1,14 +1,57 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import Marquee from "react-fast-marquee";
+import Swal from "sweetalert2";
+import { AuthContext } from "../../Provider/AuthProvider";
 
 const Recentblog = () => {
     const [items, setItem] = useState([])
+    const { user } = useContext(AuthContext)
     useEffect(() => {
         fetch('item.json')
             .then(result => result.json())
             .then(data => setItem(data))
 
     }, [])
+    const handleAddToWishList = async e => {
+        const name = e.blogName
+        const title = e.title
+        const email = user.email
+        const category = e.category
+        const longDescription = e.longDescription
+        const description = e.shortDescription
+        const imageUrl = e.imageUrl
+        console.log(e);
+        const Data = {
+            name,
+            title,
+            email,
+            category,
+            description,
+            longDescription,
+            imageUrl
+        }
+        // console.log(blogName,title,mageUrl,category,shortDescription,longDescription,_id);
+        fetch('https://frontend-mento-server.vercel.app/WishList', {
+            method: 'POST',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(Data)
+        })
+            .then(res => res.json())
+            .then(data => {
+                if (data.insertedId) {
+                    console.log('successfully added');
+                    Swal.fire({
+                        title: 'Success!',
+                        text: 'added successfully',
+                        icon: 'success',
+                        confirmButtonText: 'Ok'
+                    });
+                    e.target.reset();
+                }
+            })
+    }
     return (
         <div>
             <div className="flex items-center justify-center">
@@ -30,8 +73,9 @@ const Recentblog = () => {
                                     <button class="btn bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 hover:from-pink-500 hover:to-purple-500 text-white py-2 px-4 rounded-lg w-full sm:w-auto">
                                         Details
                                     </button>
-                                    <button class="btn bg-gradient-to-r from-yellow-200 via-orange-900 to-red-500 hover:from-red-500 hover:to-orange-500 text-white py-2 px-4 rounded-lg w-full sm:w-auto">
+                                    <button onClick={() => handleAddToWishList(item)} class="btn bg-gradient-to-r from-yellow-200 via-orange-900 to-red-500 hover:from-red-500 hover:to-orange-500 text-white py-2 px-4 rounded-lg w-full sm:w-auto">
                                         Wishlist
+
                                     </button>
                                 </div>
                             </div>

@@ -9,7 +9,7 @@ export function Newsletter() {
       .then(data => setItem(data))
 
   }, [])
-  console.log(items);
+  // console.log(items);
   return (
     <div>
       <div className="flex items-center justify-center mt-5 p-4">
