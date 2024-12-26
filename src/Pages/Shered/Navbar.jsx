@@ -29,7 +29,7 @@ const Navbar = () => {
     <li data-tooltip-id="my-tooltip" data-tooltip-content="Home"><NavLink to='/'>Home</NavLink></li>
     <li data-tooltip-id="my-tooltip" data-tooltip-content="/AllBlogs"><NavLink to='/AllBlogs'>All blogs</NavLink></li>
     <li data-tooltip-id="my-tooltip" data-tooltip-content="Add"><NavLink to='/Add'>Add Blog</NavLink></li>
-    <li data-tooltip-id="my-tooltip" data-tooltip-content="Featured"><NavLink to='/Featured'> Featured Blogs</NavLink></li>
+    <li data-tooltip-id="my-tooltip" data-tooltip-content="Featured"><NavLink to='/Feature'> Featured Blogs</NavLink></li>
     <li data-tooltip-id="my-tooltip" data-tooltip-content="Wishlist"><NavLink to='/Wishlist'>Wishlist Blog</NavLink></li>
     {
         <>

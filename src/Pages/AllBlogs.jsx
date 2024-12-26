@@ -14,7 +14,7 @@ const AllBlogs = () => {
     console.log(search);
     useEffect(() => {
         const AllBlog = async () => {
-            const data = await axios.get(`http://localhost:5000/AllBlogs?filter=${filter}&search=${search}`)
+            const data = await axios.get(`https://frontend-mento-server.vercel.app/AllBlogs?filter=${filter}&search=${search}`)
             setItem(data.data)
         }
         AllBlog()
