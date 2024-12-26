@@ -60,8 +60,7 @@ const router = createBrowserRouter([
             },
             {
                 path:'/Wishlist',
-                element:<Wishlist></Wishlist>
-
+                element:<PrivateRouter><Wishlist></Wishlist></PrivateRouter>
 
             },
             {

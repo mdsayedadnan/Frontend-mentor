@@ -1,9 +1,11 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import Swal from "sweetalert2";
 import { AuthContext } from "../../Provider/AuthProvider";
 
 const Update = () => {
     const { user } = useContext(AuthContext)
+
+    const [items,setItems] = useState([])
 
     const handleUpdate = async e => {
         e.preventDefault()
@@ -14,7 +16,7 @@ const Update = () => {
         const category = form.category.value
         const longDescription = form.long_description.value
         const description = form.des.value
-        // const  imageUrl = form. image_url.value;
+      const imageUrl = form.image_url.value;
 
         console.log(name, title, email, category, description, longDescription);
         const formData = {
@@ -26,20 +28,20 @@ const Update = () => {
             longDescription,
             imageUrl
         }
-        fetch('https://gamer-pro-server.vercel.app/Add', {
-            method: 'POST',
+        fetch(`https://frontend-mento-server.vercel.app/update/${update._id}`, {
+            method: 'PUT',
             headers: {
                 'content-type': 'application/json'
             },
-            body: JSON.stringify(formData)
+            body: JSON.stringify(updateReview)
         })
             .then(res => res.json())
             .then(data => {
-                if (data.insertedId) {
-                    console.log('successfully update');
+                if (data.modifiedCount > 0) {
+                    console.log('successfully added');
                     Swal.fire({
                         title: 'Success!',
-                        text: 'Update successfully',
+                        text: 'update added successfully',
                         icon: 'success',
                         confirmButtonText: 'Ok'
                     });
@@ -65,7 +67,7 @@ const Update = () => {
                                         </label>
                                         <input
                                             id='blog_name'
-                                            defaultValue
+                                            defaultValue={items.blog_name}
                                             name='blog_name'
                                             type='text'
                                             className='block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-200 rounded-md  focus:border-blue-400 focus:ring-blue-300 '
@@ -78,6 +80,7 @@ const Update = () => {
                                         <input
                                             id='blog_title'
                                             name='blog_title'
+                                            defaultValue={items.blog_title}
                                             type='text'
                                             className='block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-200 rounded-md  focus:border-blue-400 focus:ring-blue-300 '
                                         />
@@ -103,6 +106,7 @@ const Update = () => {
                                         </label>
                                         <select
                                             name='category'
+                                            defaultValue={items.category}
                                             id='category'
                                             className='border p-2 rounded-md'
                                         >
@@ -120,6 +124,7 @@ const Update = () => {
                                     <textarea
                                         className='block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-200 rounded-md  focus:border-blue-400 focus:ring-blue-300 '
                                         name='des'
+                                        defaultValue={items.des}
                                         id='des'
                                     ></textarea>
                                 </div>
@@ -130,6 +135,7 @@ const Update = () => {
                                     <textarea
                                         className='block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-200 rounded-md  focus:border-blue-400 focus:ring-blue-300 '
                                         name='long_description'
+                                        defaultValue={items.long_description}
                                         id='description'
                                     ></textarea>
                                 </div>
@@ -139,9 +145,9 @@ const Update = () => {
                                     </label>
                                     <input
                                         type="photo url"
-                                        name=" image_url"
-
-                                        placeholder="Enter image URL"
+                                        name="image_url"
+                                        defaultValue={items.image_url}
+                                      placeholder="Enter image URL"
                                         className="input text-black input-bordered w-full "
                                         required
                                     />

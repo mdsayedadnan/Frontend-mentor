@@ -7,13 +7,37 @@ import { Button } from "@material-tailwind/react";
 
 const Details = () => {
     const { user } = useContext(AuthContext);
+    const [comments, setComments] = useState([]);
+    const [newComment, setNewComment] = useState("");
+
+    // SEND DATA 
+    const handleCommentSubmit = e => {
+        e.preventDefault()
+
+        const Comments = e.target.Comment.value;
+        const email = user.email;
+
+
+console.log(comments);
+
+    }
+    axios.post('https://frontend-mento-server.vercel.app/comments',)
+        .then(response => {
+            setComments([response.data, ...comments]);
+            setNewComment('');
+        })
+        .catch(error => console.error(error));
+
+    // useEffect(() => {
+    //     axios.get(`/api/comments/${blogId}`)
+    //         .then(response => setComments(response.data))
+    //         .catch(error => console.error(error));
+    // }, [blogId]);
 
     const [blogs, setBlogs] = useState([])
     const { id } = useParams()
     useEffect(() => {
         fetchBlogData()
-
-
     }, [])
     const fetchBlogData = async () => {
         const { data } = await axios.get(
@@ -54,7 +78,28 @@ const Details = () => {
 
                     </div >
                     <div className="flex items-center mt-6 justify-center ">
-                    <Button className=" btn bg-gradient-to-r from-green-400 to-blue-500 hover:from-blue-500 hover:to-green-400 text-white py-2 px-6 rounded-lg mr-7" variant="outlined ">Update</Button>
+                        <Button className=" btn bg-gradient-to-r from-green-400 to-blue-500 hover:from-blue-500 hover:to-green-400 text-white py-2 px-6 rounded-lg mr-7" variant="outlined ">Update</Button>
+                    </div>
+                </div>
+                {/* comment area */}
+                <div className="bg-teal-400">
+                    <div className='flex flex-col gap-2 mt-4'>
+                        <label className='text-2xl font-semibold '>
+                            Comment Section
+                        </label>
+                        <textarea
+                            className='block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-200 rounded-md  focus:border-blue-400 focus:ring-blue-300 '
+                            name='Comment'
+                            placeholder="Write a comment..."
+                            // onChange={(e) => setComments(e.target.value)}
+                            // value={comments}
+
+                            id='description'
+                        ></textarea>
+                    </div>
+                    <div className="flex items-center justify-center">
+                    <button onClick={handleCommentSubmit} className="btn">Post Comment</button>
+
                     </div>
                 </div>
             </div>
