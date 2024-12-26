@@ -29,7 +29,7 @@ const Navbar = () => {
     <li data-tooltip-id="my-tooltip" data-tooltip-content="Home"><NavLink to='/'>Home</NavLink></li>
     <li data-tooltip-id="my-tooltip" data-tooltip-content="/AllBlogs"><NavLink to='/AllBlogs'>All blogs</NavLink></li>
     <li data-tooltip-id="my-tooltip" data-tooltip-content="Add"><NavLink to='/Add'>Add Blog</NavLink></li>
-    <li data-tooltip-id="my-tooltip" data-tooltip-content="My Reviews"><NavLink to='/myreview'> Featured Blogs</NavLink></li>
+    <li data-tooltip-id="my-tooltip" data-tooltip-content="Featured"><NavLink to='/Featured'> Featured Blogs</NavLink></li>
     <li data-tooltip-id="my-tooltip" data-tooltip-content="Wishlist"><NavLink to='/Wishlist'>Wishlist Blog</NavLink></li>
     {
         <>
@@ -41,7 +41,7 @@ const Navbar = () => {
 </>
     return (
         <div>
-            <div className="navbar bg-blue-gray-900 text-white">
+            <div className="navbar bg-teal-900 text-white">
                 <div className="navbar-start">
                     <div className="dropdown">
                         <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -66,7 +66,7 @@ const Navbar = () => {
                             }
                         </ul>
                     </div>
-                    <a className="btn btn-ghost text-xl">Forntend Mentor</a>
+                    <a className="btn btn-ghost text-xl hover:text-gray-600">Forntend Mentor</a>
                 </div>
                 <div className="navbar-center hidden lg:flex">
                     <ul className="menu menu-horizontal px-1">

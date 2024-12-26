@@ -9,7 +9,7 @@ export function Recentblog() {
 
   const [items, setItem] = useState([])
   useEffect(() => {
-    fetch('item.json')
+    fetch('https://frontend-mento-server.vercel.app/AllBlogs')
       .then(result => result.json())
       .then(data => setItem(data))
 

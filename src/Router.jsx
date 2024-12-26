@@ -13,6 +13,8 @@ import Add from "./Pages/Home/Add";
 import Wishlist from "./Pages/Home/Wishlist";
 import Update from "./Pages/Home/Update";
 import Recentblog from "./Pages/Home/Recentblog";
+import Featured from "./Pages/Home/Featured";
+import PrivateRouter from "./Provider/PrivateRouter";
 
 const router = createBrowserRouter([
     {
@@ -41,7 +43,6 @@ const router = createBrowserRouter([
             {
                 path: '/details/:id',
                 element: <Details></Details>,
-                // loader: ({ params }) => fetch(`item.json/details/${params.id}`)
             },
             {
                 path: '/Update',
@@ -50,8 +51,12 @@ const router = createBrowserRouter([
             },
             {
                 path: '/Add',
-                element:<Add></Add>
+                element:<PrivateRouter><Add></Add></PrivateRouter>
 
+            },
+            {
+                path: '/Feature',
+                element:<Featured></Featured>
             },
             {
                 path:'/Wishlist',

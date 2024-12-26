@@ -1,50 +1,51 @@
 import { FaTwitter, FaYoutube } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
     return (
         <div className="bg-light-green-400">
-            <footer className="bg-gray-800 text-gray-100 py-10">
+            <footer className="bg-gray-900 text-gray-100 py-10">
                 <div className="container mx-auto text-center space-y-6">
 
                     <h2 className="text-2xl font-semibold">Connect socially with Youplay</h2>
 
 
                     <div className="flex justify-center space-x-8">
-                        <a
+                        <Link
                             href="https://discord.com"
                             className="flex flex-col items-center space-y-2 hover:text-blue-500"
                             target="_blank"
                             rel="noopener noreferrer"
                         >
-                            <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8" fill="currentColor" viewBox="0 0 24 24">
+                            <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8">
                             </svg>
-                            <span className="text-sm">Discord</span>
-                        </a>
+                            <span className="text-sm bg-black">Discord</span>
+                        </Link>
 
-                        <a
+                        <Link
                             href="https://twitch.tv"
                             className="flex flex-col items-center space-y-2 hover:text-purple-500"
                             target="_blank"
                             rel="noopener noreferrer"
                         >
-                            <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8" fill="currentColor" viewBox="0 0 24 24">
+                            <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8">
                             </svg>
                             <span className="text-sm">Twitch</span>
-                        </a>
+                        </Link>
 
-                        <a
+                        <Link
                             href="https://youtube.com"
                             className="flex flex-col items-center space-y-2 hover:text-red-500"
                             target="_blank"
                             rel="noopener noreferrer"
                         >
-                            <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8" fill="currentColor" viewBox="0 0 24 24">
-                                <path > <FaYoutube></FaYoutube></path>
+                            <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8">
+                                <span > <FaYoutube></FaYoutube></span>
                             </svg>
                             <span className="text-sm">YouTube</span>
-                        </a>
+                        </Link>
 
-                        <a
+                        <Link
                             href="https://twitter.com"
                             className="flex flex-col items-center space-y-2 hover:text-blue-400"
                             target="_blank"
@@ -53,7 +54,7 @@ const Footer = () => {
                             <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8" fill="currentColor" viewBox="0 0 24 24">
                                 <button className="bg-white"><FaTwitter /></button>                  </svg>
                             <span className="text-sm">Twitter</span>
-                        </a>
+                        </Link>
                     </div>
 
 

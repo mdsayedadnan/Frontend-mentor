@@ -24,12 +24,13 @@ const AllBlogs = () => {
     const handleAddToWishList = async e => {
         const name = e.blogName
         const title = e.title
-        const email = user.email
+        const email = user?.email
+        console.log(email);
         const category = e.category
         const longDescription = e.longDescription
         const description = e.shortDescription
         const imageUrl = e.imageUrl
-        console.log(email);
+   
         const Data = {
             name,
             title,
@@ -51,14 +52,14 @@ const AllBlogs = () => {
             .then(data => {
                 if (data.insertedId) {
                     console.log('successfully added');
-                    Navigate
+                    Navigate('/Wishlist')
                     Swal.fire({
                         title: 'Success!',
                         text: 'added successfully',
                         icon: 'success',
                         confirmButtonText: 'Ok'
                     });
-                    e.target.reset();
+                     e.target.reset();
                 }
             })
     }
@@ -82,7 +83,7 @@ const AllBlogs = () => {
                         >
                             <option disabled value="">Filter by Category</option>
                             <option value="Development">Development</option>
-                            <option value="Graphics Design">Graphics Design</option>
+                            <option value="Web Design">Web Design</option>
                             <option value="Technology">Technology</option>
                         </select>
                     </div>

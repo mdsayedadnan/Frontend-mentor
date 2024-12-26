@@ -9,15 +9,13 @@ const Wishlist = () => {
 
     const [Blogs, setBlogs] = useState()
     useEffect(() => {
-        fetch('https://frontend-mento-server.vercel.app/AllBlogs')
-        // fetch(`https://frontend-mento-server.vercel.app/WishListBlog/${user?.email}`)
+        fetch(`https://frontend-mento-server.vercel.app/WishListBlog/${user?.email}`)
             .then(res => res.json())
             .then(data => setBlogs(data))
 
-    }, [])
-    // }, [user?.email])
+    }, [user?.email])
 
- 
+    console.log(Blogs);
     const handleDelete = id => {
         Swal.fire({
             title: "Are you sure?",
@@ -30,7 +28,7 @@ const Wishlist = () => {
         }).then((result) => {
             if (result.isConfirmed) {
 
-                fetch(`https://gamer-pro-server.vercel.app/AllBlogs/${id}`, {
+                fetch(`https://frontend-mento-server.vercel.app/AllBlogs/${id}`, {
                     method: 'DELETE'
                 })
                     .then(res => res.json())
@@ -89,8 +87,8 @@ const Wishlist = () => {
                                         <td className="border border-gray-300 px-4 py-2">{Blog.category}</td>
 
                                         <td className="border border-gray-300 px-4 py-2">
-                                        <Link to={`/Details/${Blog._id}`}><button className="btn bg-gradient-to-r from-green-400 to-blue-500 hover:from-blue-500 hover:to-green-400 text-white py-2 px-6 rounded-lg mr-7">Details</button>
-                                        </Link>
+                                            <Link to={`/Details/${Blog._id}`}><button className="btn bg-gradient-to-r from-green-400 to-blue-500 hover:from-blue-500 hover:to-green-400 text-white py-2 px-6 rounded-lg mr-7">Details</button>
+                                            </Link>
                                         </td>
                                         <td data-tooltip-id="my-tooltip" data-tooltip-content="If you delete the review please click"><button onClick={() => handleDelete(Blog._id)} className="btn btn-outline">Delate</button></td>
 
