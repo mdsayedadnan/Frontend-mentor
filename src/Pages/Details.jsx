@@ -3,12 +3,15 @@ import { AuthContext } from "../Provider/AuthProvider";
 import { useParams } from "react-router-dom";
 import axios from "axios";
 import { Button } from "@material-tailwind/react";
+import Swal from "sweetalert2";
 
 
 const Details = () => {
     const { user } = useContext(AuthContext);
-    const [comments, setComments] = useState([]);
-    const [newComment, setNewComment] = useState("");
+    const [blogs, setBlogs] = useState([]);
+     const [comments,setComments]=useState([])
+    const { id } = useParams()
+
 
     // SEND DATA 
     const handleCommentSubmit = e => {
@@ -16,26 +19,40 @@ const Details = () => {
 
         const Comments = e.target.Comment.value;
         const email = user.email;
+        const displayName = user.displayName;
+        const photoURL = user.photoURL;
+        const BlogId = blogs._id
 
 
-console.log(comments);
-
-    }
-    axios.post('https://frontend-mento-server.vercel.app/comments',)
+        const CommentData =  {Comments,email,displayName,photoURL,BlogId}
+        axios.post('http://localhost:5000/comments',CommentData)
         .then(response => {
-            setComments([response.data, ...comments]);
-            setNewComment('');
+          console.log(response.data);
+          if (response.data.insertedId) {
+            console.log('successfully added');
+            Swal.fire({
+              title: 'Success!',
+              text: 'added successfully',
+              icon: 'success',
+              confirmButtonText: 'Ok'
+            });
+            e.target.reset();
+          }
+            
+
         })
         .catch(error => console.error(error));
+       
 
-    // useEffect(() => {
-    //     axios.get(`/api/comments/${blogId}`)
-    //         .then(response => setComments(response.data))
-    //         .catch(error => console.error(error));
-    // }, [blogId]);
+    }
+ 
+console.log(comments);
+    useEffect(() => {
+        axios.get(`/http://localhost:5000/CommentData/${blogs.id}`)
+            .then(response => setComments(response.data))
+            .catch(error => console.error(error));
+    }, [blogs._id]);
 
-    const [blogs, setBlogs] = useState([])
-    const { id } = useParams()
     useEffect(() => {
         fetchBlogData()
     }, [])
@@ -82,7 +99,7 @@ console.log(comments);
                     </div>
                 </div>
                 {/* comment area */}
-                <div className="bg-teal-400">
+                <form onSubmit={handleCommentSubmit} className="bg-teal-400">
                     <div className='flex flex-col gap-2 mt-4'>
                         <label className='text-2xl font-semibold '>
                             Comment Section
@@ -98,10 +115,10 @@ console.log(comments);
                         ></textarea>
                     </div>
                     <div className="flex items-center justify-center">
-                    <button onClick={handleCommentSubmit} className="btn">Post Comment</button>
+                        <button className="btn">Post Comment</button>
 
                     </div>
-                </div>
+                </form>
             </div>
 
         </div>

@@ -8,23 +8,7 @@ export default function Banner() {
 
   return (
     <div>
-      {/* <Carousel transition={{ duration: 2 }} className="rounded-xl">
-      <img
-        src={img1}
-        alt="image 1"
-        className="h-full w-full object-cover"
-      />
-      <img
-        src={img2}
-        alt="image 2"
-        className="h-full w-full object-cover"
-      />
-      <img
-        src={img3}
-        alt="image 3"
-        className="h-full w-full object-cover"
-      />
-    </Carousel> */}
+    
       <div>
         <div
           className="hero min-h-screen"

@@ -11,17 +11,18 @@ const AllBlogs = () => {
     const [items, setItem] = useState([])
     const Navigate = useNavigate()
 
-// console.log(items);
+    console.log(search);
     useEffect(() => {
-        const AllBlog = async()=>{
-          const data = await axios.get(`https://frontend-mento-server.vercel.app/AllBlogs?filter=${filter}&serch=${search}`)
-          setItem(data.data)
+        const AllBlog = async () => {
+            const data = await axios.get(`http://localhost:5000/AllBlogs?filter=${filter}&search=${search}`)
+            setItem(data.data)
         }
-         AllBlog()     
+        AllBlog()
 
-      }, [filter,search])
+    }, [filter, search])
 
     const handleAddToWishList = async e => {
+        const id = e._id
         const name = e.blogName
         const title = e.title
         const email = user?.email
@@ -30,8 +31,9 @@ const AllBlogs = () => {
         const longDescription = e.longDescription
         const description = e.shortDescription
         const imageUrl = e.imageUrl
-   
+
         const Data = {
+            id,
             name,
             title,
             email,
@@ -59,7 +61,7 @@ const AllBlogs = () => {
                         icon: 'success',
                         confirmButtonText: 'Ok'
                     });
-                     e.target.reset();
+                    e.target.reset();
                 }
             })
     }
@@ -121,11 +123,11 @@ const AllBlogs = () => {
                             <figure>
                                 <img className="rounded-2xl mt-6"
                                     src={item.imageUrl}
-                                    alt={item.blogName} />
+                                    alt={item.title} />
                             </figure>
                             <div className="card-body">
                                 <h2 className="card-title">
-                                    {item.blogName}
+                                    {item.title}
                                     <div className="badge badge-secondary">{item.category}</div>
                                 </h2>
                                 <p>{item.shortDescription}</p>

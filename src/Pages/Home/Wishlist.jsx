@@ -27,8 +27,7 @@ const Wishlist = () => {
             confirmButtonText: "Yes, delete it!"
         }).then((result) => {
             if (result.isConfirmed) {
-
-                fetch(`https://frontend-mento-server.vercel.app/AllBlogs/${id}`, {
+                fetch(`http://localhost:5000/Delate/${id}`, {
                     method: 'DELETE'
                 })
                     .then(res => res.json())
@@ -41,7 +40,7 @@ const Wishlist = () => {
                                 icon: "success"
                             });
 
-                            const remainingUsers = reviews.filter(user => user._id !== id);
+                            const remainingUsers = Blogs.filter(user => user._id !== id);
                             setBlogs(remainingUsers);
                         }
                     })
@@ -87,7 +86,7 @@ const Wishlist = () => {
                                         <td className="border border-gray-300 px-4 py-2">{Blog.category}</td>
 
                                         <td className="border border-gray-300 px-4 py-2">
-                                            <Link to={`/Details/${Blog._id}`}><button className="btn bg-gradient-to-r from-green-400 to-blue-500 hover:from-blue-500 hover:to-green-400 text-white py-2 px-6 rounded-lg mr-7">Details</button>
+                                            <Link to={`/Details/${Blog.id}`}><button className="btn bg-gradient-to-r from-green-400 to-blue-500 hover:from-blue-500 hover:to-green-400 text-white py-2 px-6 rounded-lg mr-7">Details</button>
                                             </Link>
                                         </td>
                                         <td data-tooltip-id="my-tooltip" data-tooltip-content="If you delete the review please click"><button onClick={() => handleDelete(Blog._id)} className="btn btn-outline">Delate</button></td>

@@ -15,6 +15,7 @@ export function Recentblog() {
 
   }, [])
   const handleAddToWishList = async e => {
+    const id = e._id
     const name = e.blogName
     const title = e.title
     const email = user.email
@@ -24,6 +25,7 @@ export function Recentblog() {
     const imageUrl = e.imageUrl
     console.log(e);
     const Data = {
+      id,
       name,
       title,
       email,
