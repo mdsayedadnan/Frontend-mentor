@@ -3,6 +3,7 @@ import Banner from '../Banner';
 import Newsletter from './newsletter';
 import Recentblog from './Recentblog';
 import MostDescrioption from './MostDescrioption';
+import UpcomingBlogs from './UpcomingBlogs';
 // import Recentblog from './Recentblog';
 
 const Home = () => {
@@ -10,6 +11,7 @@ const Home = () => {
         <div>
             <Banner></Banner>
             <Recentblog></Recentblog>
+            <UpcomingBlogs></UpcomingBlogs>
             <Newsletter></Newsletter>
             <MostDescrioption></MostDescrioption>
          

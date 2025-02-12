@@ -61,7 +61,7 @@ export function Recentblog() {
     <div>
       <div className="flex items-center justify-center mt-5 p-4">
         <Marquee cla>
-          <div className="flex flex-col justify-center items-center bg-blue-gray-100 rounded-xl">
+          <div className="flex flex-col justify-center items-center rounded-xl">
             <h1 className="text-5xl font-semibold hover:text-green-700">Recent blog </h1>
             <p className='font-bold text-2xl p-3'>Explore our collection of the recent added blogs. Dive in and discover your next favorite blog! </p>
           </div>

@@ -128,7 +128,7 @@ const AllBlogs = () => {
                             <div className="card-body">
                                 <h2 className="card-title">
                                     {item.title}
-                                    <div className="badge badge-secondary">{item.category}</div>
+                                    <div className="badge"></div>
                                 </h2>
                                 <p>{item.shortDescription}</p>
                                 <p>{item.longDescription}</p>

@@ -1,7 +1,6 @@
 import React, { useContext } from 'react';
 import { Link, NavLink, useLocation, useNavigate } from 'react-router-dom';
 import Swal from 'sweetalert2';
-import Navbar from '../Pages/Shered/Navbar';
 import { FaGoogle } from 'react-icons/fa';
 import { AuthContext } from '../Provider/AuthProvider';
 
@@ -40,15 +39,25 @@ const Login = () => {
                     confirmButtonText: 'Cool'
                 })
             })
+
+
+    }
+
+    const hadleGoogleLogin = () =>{
+        googleSignIn()
+        .then(result =>{
+            console.log(result.user);
+            navigate('/')
+        })
     }
     return (
         <div>
             <div>
                 <div>
-                    <div className="hero bg-green-300 mt-10 w-11/12 mx-auto rounded-full">
+                    <div className="hero bg-green-300  max-w-7xl mx-auto  rounded-full">
                         <div className="hero-content flex-col lg:flex-row-reverse">
 
-                            <div className="card bg-base-100  shrink-0 shadow-2xl">
+                            <div className="card bg-base-100 mt-20 shadow-2xl max-w-7xl mx-auto">
                                 <form onSubmit={handleLogin} className="card-body">
                                     <h1 className="text-5xl font-bold p-5">Login Your Account now!</h1>
 
@@ -73,7 +82,7 @@ const Login = () => {
                                 </form>
                                 <div>
                                     <p className="font-medium text-red-400 items-center flex justify-center p-5">Are you new here..?<Link to='/signIn' className="text-blue-600 hover:underline">  Register please!</Link></p>
-                                    <span onClick={googleSignIn} className="btn btn-xs p-5 bg-green-600 mb-6 ml-10"> <FaGoogle />  Google Login</span>
+                                    <span onClick={hadleGoogleLogin} className="btn btn-xs p-5 bg-green-600 mb-6 ml-10"> <FaGoogle />  Google Login</span>
                                 </div>
                             </div>
                         </div>

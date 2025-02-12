@@ -10,7 +10,7 @@ const Details = () => {
     const [blogs, setBlogs] = useState([]);
      const [comments,setComments]=useState([])
     const { id } = useParams()
-const Owner = comments.find(c=>c.email=== user.email)
+const Owner = comments.find(c=>c.email=== user?.email)
 
     // SEND DATA 
     const handleCommentSubmit = e => {
@@ -45,13 +45,14 @@ const Owner = comments.find(c=>c.email=== user.email)
 
     }
  
-console.log(comments);
     useEffect(() => {
         axios.get(`https://frontend-mento-server.vercel.app/CommentData`)
             .then(data => 
             {
+                console.log(data);
                 const filter = data.data.filter(f=>f.BlogId === blogs._id)
                 setComments(filter)
+                console.log(filter);
             }
             )
             .catch(error => console.error(error));
@@ -136,7 +137,7 @@ console.log(comments);
                     {
                 
                             
-                <section className='p-6 border-[#C39C5D] border text-white rounded-md shadow-md flex-1 '>
+                <section className='p-6 rounded-md shadow-md flex-1 '>
                 <h2 className='text-lg font-semibold capitalize '>
                     Students Review*
                 </h2>

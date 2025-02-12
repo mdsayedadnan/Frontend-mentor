@@ -1,5 +1,3 @@
-// import { Carousel } from "@material-tailwind/react";
-import { Link } from 'react-router-dom';
 import img1 from '../../../Frontend-Mentor/src/assets/download222.jpg'
 
 import { easeOut, motion } from "framer-motion";
@@ -15,7 +13,7 @@ export default function Banner() {
           style={{
             backgroundImage: {img1},
           }}>
-          <div className="hero-overlay bg-teal-600 rounded-"></div>
+          <div className="hero-overlay bg-teal-800 rounded-"></div>
           <div className="hero-content text-neutral-content text-center">
             <div className="max-w-md">
 
@@ -26,8 +24,6 @@ export default function Banner() {
               <p className="mb-5">
               Mastering Modern Web Development: Top Tips for Frontend and Backend Developers to Build Scalable, Performant, and User-Friendly Applications Using the Latest Frameworks, Tool
               </p>
-             <Link to={'/'}>
-             <button className="btn btn-outline">Get Started</button></Link>
             </div>
           </div>
         </div>

@@ -45,9 +45,10 @@ const Featured = () => {
                                         className={`${index % 2 === 0 ? "bg-white" : "bg-gray-50"} hover:bg-gray-100`}
                                     >
                                         <th className="border border-gray-300 px-4 py-2">{index + 1}</th>
-                                        <td className="border border-gray-300 font-bold px-4 py-2">{d.blogName}</td>
+                                        <td className="border border-gray-300 font-bold px-4 py-2">{d.name}</td>
                                         <td className="border border-gray-300  px-4 py-2">{d.title}</td>
                                         <td className="border border-gray-300 px-4 py-2">{d?.category}</td>
+                                        <td className="border border-gray-300 px-4 py-2">{d.details}</td>
 
                                      
 
